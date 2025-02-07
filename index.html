@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white font-poppins">
+
+    <div class="container mx-auto py-8">
+        <!-- Calculator -->
+        <div class="max-w-md mx-auto bg-gray-800 p-8 rounded-lg shadow-lg">
+            <h1 class="text-center text-3xl font-semibold mb-6">Scientific Calculator</h1>
+            <div id="calculator">
+                <input type="text" id="display" class="w-full p-3 mb-4 text-center text-xl bg-gray-700 rounded-lg" disabled />
+                <div class="grid grid-cols-4 gap-4">
+                    <button class="btn" onclick="appendToDisplay('7')">7</button>
+                    <button class="btn" onclick="appendToDisplay('8')">8</button>
+                    <button class="btn" onclick="appendToDisplay('9')">9</button>
+                    <button class="btn" onclick="appendToDisplay('/')">/</button>
+                    <button class="btn" onclick="appendToDisplay('4')">4</button>
+                    <button class="btn" onclick="appendToDisplay('5')">5</button>
+                    <button class="btn" onclick="appendToDisplay('6')">6</button>
+                    <button class="btn" onclick="appendToDisplay('*')">*</button>
+                    <button class="btn" onclick="appendToDisplay('1')">1</button>
+                    <button class="btn" onclick="appendToDisplay('2')">2</button>
+                    <button class="btn" onclick="appendToDisplay('3')">3</button>
+                    <button class="btn" onclick="appendToDisplay('-')">-</button>
+                    <button class="btn" onclick="appendToDisplay('0')">0</button>
+                    <button class="btn" onclick="appendToDisplay('.')">.</button>
+                    <button class="btn" onclick="clearDisplay()">C</button>
+                    <button class="btn" onclick="appendToDisplay('+')">+</button>
+                    <button class="btn" onclick="appendToDisplay('(')">(</button>
+                    <button class="btn" onclick="appendToDisplay(')')">)</button>
+                    <button class="btn" onclick="appendToDisplay('**')">^</button>
+                    <button class="btn" onclick="calculateResult()">=</button>
+                    <button class="btn" onclick="appendToDisplay('sin(')">sin</button>
+                    <button class="btn" onclick="appendToDisplay('cos(')">cos</button>
+                    <button class="btn" onclick="appendToDisplay('tan(')">tan</button>
+                </div>
+            </div>
+            <div class="mt-6 text-center">
+                <button class="btn" onclick="viewHistory()">View History</button>
+            </div>
+        </div>
+
+        <!-- History Page -->
+        <div id="historyPage" class="hidden max-w-md mx-auto bg-gray-800 p-8 mt-8 rounded-lg shadow-lg">
+            <h1 class="text-center text-3xl font-semibold mb-6">Calculation History</h1>
+            <div id="historyList" class="text-sm">
+                <!-- History entries will appear here -->
+            </div>
+            <div class="text-center mt-6">
+                <button class="btn" onclick="closeHistory()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
